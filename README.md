@@ -9,7 +9,7 @@ A new Flutter project.
 
 # About & Projects Overview ...
 
-<img width="480" alt="PortfolioAbout" src="https://github.com/yasirkhan25/My-Portfolio/assets/107922679/1565308a-ab6f-45d8-a9f9-c571a8748038">                                              <img width="480" alt="PortfolioProject" src="https://github.com/yasirkhan25/My-Portfolio/assets/107922679/aa93aab9-b9da-4677-9c0f-1bfa1bb9ac3c">
+<img width="480" alt="PortfolioAbout" src="https://github.com/yasirkhan25/My-Portfolio/assets/107922679/1565308a-ab6f-45d8-a9f9-c571a8748038">  |  <img width="480" alt="PortfolioProject" src="https://github.com/yasirkhan25/My-Portfolio/assets/107922679/aa93aab9-b9da-4677-9c0f-1bfa1bb9ac3c">
 
 
 
