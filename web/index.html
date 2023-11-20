@@ -47,10 +47,12 @@
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
+              onEntrypointLoaded: async function(engineInitializer) {
+          let appRunner = await engineInitializer.initializeEngine({
+            hostElement: document.querySelector("#flutter_app"),
+            renderer: "canvaskit"
           });
+          appRunner.runApp();
         }
       });
     });
@@ -66,7 +68,7 @@
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyDvUwkP2XvHEuPdmrVPtwPJPJwTfOzHZLc",
+   apiKey: "AIzaSyDvUwkP2XvHEuPdmrVPtwPJPJwTfOzHZLc",
     authDomain: "my-portfolio-e3eaa.firebaseapp.com",
     projectId: "my-portfolio-e3eaa",
     storageBucket: "my-portfolio-e3eaa.appspot.com",
@@ -79,5 +81,13 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=2330050811');
+      });
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>

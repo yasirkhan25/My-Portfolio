@@ -11,7 +11,7 @@ class AppProvider extends ChangeNotifier {
   static AppProvider state(BuildContext context, [bool listen = false]) =>
       Provider.of<AppProvider>(context, listen: listen);
 
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode _themeMode = ThemeMode.dark;
   ThemeMode get themeMode => _themeMode;
 
   bool get isDark => _themeMode == ThemeMode.dark;
@@ -22,13 +22,13 @@ class AppProvider extends ChangeNotifier {
     String? stringTheme = prefs.getString('theme');
 
     ThemeMode? theme =
-        stringTheme == null ? ThemeMode.light : themeMap[stringTheme];
+        stringTheme == null ? ThemeMode.dark : themeMap[stringTheme];
 
     if (theme == null) {
       await prefs.setString(
-          'theme', ThemeMode.light.toString().split(".").last);
+          'theme', ThemeMode.dark.toString().split(".").last);
 
-      _themeMode = ThemeMode.light;
+      _themeMode = ThemeMode.dark;
     }
     _themeMode = theme!;
 
